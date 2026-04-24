@@ -181,8 +181,13 @@ function AskAISequence() {
 export default function App() {
   return (
     <div className="font-body-md antialiased text-on-background bg-background min-h-screen">
+      {/* CLOUDFLARE DEBUG BANNER */}
+      <div className="bg-red-600 text-white text-center py-4 font-bold tracking-widest uppercase z-[9999] relative">
+        CLOUDFLARE DEPLOYMENT TEST - IF YOU SEE THIS, THE LATEST BUILD IS LIVE
+      </div>
+      
       {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+      <nav className="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="flex justify-between items-center h-16 px-8 max-w-7xl mx-auto">
           <div className="text-xl font-bold tracking-tight text-slate-900">PRISM</div>
           <div className="hidden md:flex space-x-8">
