@@ -188,6 +188,7 @@ export default function App() {
           <div className="hidden md:flex space-x-8">
             <a className="text-slate-600 hover:text-slate-900 transition-colors font-body-md text-body-sm font-medium" href="#system">System</a>
             <a className="text-slate-600 hover:text-slate-900 transition-colors font-body-md text-body-sm font-medium" href="#impact">Impact</a>
+            <a className="text-slate-600 hover:text-slate-900 transition-colors font-body-md text-body-sm font-medium" href="#agents">Platform</a>
             <a className="text-slate-600 hover:text-slate-900 transition-colors font-body-md text-body-sm font-medium" href="#security">Security</a>
             <a className="text-slate-600 hover:text-slate-900 transition-colors font-body-md text-body-sm font-medium" href="#contact">Contact</a>
           </div>
@@ -531,6 +532,85 @@ export default function App() {
                 />
               </motion.div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* AGENTS SECTION */}
+        <section id="agents" className="bg-slate-50 border-y border-outline-variant py-xl scroll-mt-16">
+          <div className="max-w-7xl mx-auto px-margin">
+            <div className="text-center mb-xl">
+              <h2 className="font-h2 text-h2 mt-0 mb-xs text-on-background">Our Agents — One Platform Across the EPC Lifecycle</h2>
+              <p className="font-body-lg text-on-surface-variant m-0">6 AI agents working together from bid decision to project execution</p>
+            </div>
+            
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md mb-xl"
+            >
+              {[
+                { 
+                  title: "SIL Brain", 
+                  subtitle: "Bid / No-Bid Intelligence", 
+                  desc: "Decides which tenders to pursue using structured risk, capability, and effort analysis.",
+                  highlight: false
+                },
+                { 
+                  title: "PRISM", 
+                  subtitle: "Proposal Intelligence", 
+                  desc: "Tracks bid state, risks, commitments, and builds memory across the proposal lifecycle.",
+                  highlight: true
+                },
+                { 
+                  title: "Paige", 
+                  subtitle: "Procurement Manager", 
+                  desc: "Automates vendor coordination, quote comparison, and engineering evaluation workflows.",
+                  highlight: false
+                },
+                { 
+                  title: "Dorits", 
+                  subtitle: "Document Controller", 
+                  desc: "Manages document indexing, revisions, approvals, and full audit trails.",
+                  highlight: false
+                },
+                { 
+                  title: "Clive", 
+                  subtitle: "Change Order Agent", 
+                  desc: "Identifies change orders early by comparing communication with baseline scope.",
+                  highlight: false
+                },
+                { 
+                  title: "Project Control Agent", 
+                  subtitle: "Execution Intelligence", 
+                  desc: "Tracks real-time project progress from communication and updates the PMS automatically.",
+                  highlight: false
+                }
+              ].map((agent, i) => (
+                <motion.div 
+                  key={i}
+                  variants={fadeUp}
+                  whileHover={{ y: -4, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
+                  className={`p-lg bg-white rounded-xl shadow-sm transition-all flex flex-col justify-start relative ${agent.highlight ? 'border-2 border-primary shadow-[0_4px_20px_-5px_rgba(0,102,255,0.15)] ring-1 ring-primary/20 hover:border-primary/80' : 'border border-outline-variant hover:border-slate-300'}`}
+                >
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="font-h3 text-h3 m-0 text-on-surface">{agent.title}</h3>
+                    {agent.highlight && (
+                      <span className="bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">
+                        Core Focus
+                      </span>
+                    )}
+                  </div>
+                  <p className="font-label-caps text-primary text-xs tracking-wider uppercase m-0 mb-4 font-semibold">{agent.subtitle}</p>
+                  <p className="font-body-md text-on-surface-variant m-0 leading-relaxed">{agent.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+            
+            <p className="text-center font-body-md text-on-surface-variant m-0">
+              <span className="font-semibold text-on-surface">PRISM</span> is the proposal intelligence layer within a larger end-to-end EPC platform.
+            </p>
           </div>
         </section>
 
